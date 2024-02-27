@@ -57,7 +57,7 @@ docker logout
 ```
 
 ```bash
-docker login -u "mbulingit" -p "#PlmOknIjb123" docker.io
+docker login -u "mbulingit" -p "#PlmO***b123" docker.io
 ```
 
 2. Build image base on Dockerfile
