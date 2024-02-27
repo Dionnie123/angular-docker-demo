@@ -14,10 +14,10 @@ https://nodejs.org/en
   npm i @angular/cli
 ```
 
-3. Create New Project named docker-demo
+3. Create New Project named angular-docker-demo
 
 ```bash
-  ng new angular-docker-demo --skip-install
+  ng new angular-angular-docker-demo --skip-install
 ```
 
 ## Setup Docker on Windows
@@ -63,19 +63,19 @@ docker login -u "mbulingit" -p "#PlmOknIjb123" docker.io
 2. Build image base on Dockerfile
 
 ```bash
-docker build -t angular-docker-demo-dev .
+docker build -t angular-angular-docker-demo-dev .
 ```
 
 3. Run a docker container base on the image built. **_Make sure to run it on Powershell._**
 
 ```bash
-docker run -it --rm -p 4200:4200 -v ${pwd}/src:/app/src angular-docker-demo-dev
+docker run -it --rm -p 4200:4200 -v ${pwd}/src:/app/src angular-angular-docker-demo-dev
 ```
 
 4. Go to http://localhost:4200/ and start developing with live reload.
 
 ```bash
-docker run -it --rm -p 4200:4200 -v ${pwd}/src:/app/src angular-docker-demo-dev
+docker run -it --rm -p 4200:4200 -v ${pwd}/src:/app/src angular-angular-docker-demo-dev
 ```
 
 ## Sharing Docker Image to others via DockerHub.
@@ -85,14 +85,14 @@ Install top VSCode extensions for Angular and Docker.
 1. Tag your Docker Image
 
 ```bash
-docker tag angular-docker-demo-dev mbulingit/angular-docker-demo-dev
+docker tag angular-angular-docker-demo-dev mbulingit/angular-angular-docker-demo-dev
 
 ```
 
 2. Push you Docker Image to the Hub
 
 ```bash
-docker push mbulingit/angular-docker-demo-dev
+docker push mbulingit/angular-angular-docker-demo-dev
 
 ```
 
@@ -103,31 +103,31 @@ Modifications outside src/ folder e.g package.json requires rebuild of image & c
 1. Stop Container
 
 ```bash
-docker stop angular-docker-demo-dev
+docker stop angular-angular-docker-demo-dev
 ```
 
 2. Delete Container
 
 ```bash
-docker rm angular-docker-demo-dev
+docker rm angular-angular-docker-demo-dev
 ```
 
 3. Delete Image
 
 ```bash
-docker rmi angular-docker-demo-dev
+docker rmi angular-angular-docker-demo-dev
 ```
 
 2. Repush Image to DockerHub
 
 ```bash
-docker build -t angular-docker-demo-dev .
+docker build -t angular-angular-docker-demo-dev .
 ```
 
 ## Creating a distribution version of your app:
 
 ```bash
-docker run -it --rm -v ${PWD}/src:/app/src -v ${PWD}/dist:/app/dist angular-docker-demo-dev npm run build
+docker run -it --rm -v ${PWD}/src:/app/src -v ${PWD}/dist:/app/dist angular-angular-docker-demo-dev npm run build
 ```
 
 Explanation:
@@ -137,7 +137,7 @@ Explanation:
 | \-it | | | Allocates a pseudo-TTY. This is often used for an interactive shell. |
 | \--rm | | | Ensures that each time a container is run, it is removed as soon as it finishes its task, for CI/CD processes. |
 | \-v | | | Mount a directory. Any changes made in one location are reflected in the other. |
-| \-v ${PWD}/src:/app/src   | /src              | /app/src  |${PWD} gets the absolute path of project root directory e.g C:\Users\...\angular-docker-demo\ |
+| \-v ${PWD}/src:/app/src   | /src              | /app/src  |${PWD} gets the absolute path of project root directory e.g C:\Users\...\angular-angular-docker-demo\ |
 | \-v ${PWD}/dist:/app/dist | /dist | /app/dist | |
-| angular-docker-demo-dev | | | Docker image name |
+| angular-angular-docker-demo-dev | | | Docker image name |
 | npm run build | | | Compiles the source code and outputs the **_/dist_** folder which can be deployed to hosting platform like Vercel. |
