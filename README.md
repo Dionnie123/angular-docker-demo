@@ -145,3 +145,11 @@ Explanation:
 | npm run build | | | Compiles the source code and outputs the **_/dist_** folder which can be deployed to hosting platform like Vercel. |
 
 In the **_.gitnigore_** of the project, remove **_/dist_** if you want to deploy app as pre-built and avoid running hosting parform CI commands e.g installing dependencies (Vercel won't allow this at this moment).
+
+## Tips
+
+Docker: How do I add myself to the docker-users group on Windows?
+
+```bash
+net localgroup docker-users "your-user-account-name" /ADD
+```
