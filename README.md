@@ -144,18 +144,4 @@ Explanation:
 | angular-docker-demo-dev | | | Docker image name |
 | npm run build | | | Compiles the source code and outputs the **_/dist_** folder which can be deployed to hosting platform like Vercel. |
 
-Since we already have a /dist folder ready for deployment, let's use Vercel CLI to deploy pre-built applications.
-
-```bash
-npm i -g vercel
-```
-
-"running scripts on this system is disabled..." error fix for Powershell terminal.
-
-```bash
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-```
-
-```bash
-vercel login
-```
+In the **_.gitnigore_** of the project, remove **_/dist_** if you want to deploy app as pre-built and avoid running hosting parform CI commands e.g installing dependencies (Vercel won't allow this at this moment).
