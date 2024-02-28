@@ -32,6 +32,8 @@ https://www.bleepingcomputer.com/tutorials/how-to-enable-cpu-virtualization-in-y
 
 ## Setup Docker in Project with VSCode
 
+Note: It is important that Docker Desktop is running on the background and you're signed in on it while working on Docker files
+
 Install top VSCode extensions for Angular and Docker.
 
 Reference: https://blog.cloudboost.io/developing-angular-applications-using-docker-6f4835a75195
@@ -50,7 +52,7 @@ CMD ["npm", "start", "--", "--host", "0.0.0.0", "--poll", "500"]
 
 ```
 
-2. Login to Docker via Terminal
+2. Login to Docker via Terminal, **_Make sure to run all commands on Powershell._**
 
 ```bash
 docker logout
@@ -66,7 +68,7 @@ docker login -u "mbulingit" -p "#PlmO***b123" docker.io
 docker build -t angular-docker-demo-dev .
 ```
 
-3. Run a docker container base on the image built. **_Make sure to run it on Powershell._**
+3. Run a docker container base on the image built.
 
 ```bash
 docker run -it --rm -p 4200:4200 -v ${pwd}/src:/app/src angular-docker-demo-dev
@@ -141,3 +143,19 @@ Explanation:
 | \-v ${PWD}/dist:/app/dist | /dist | /app/dist | |
 | angular-docker-demo-dev | | | Docker image name |
 | npm run build | | | Compiles the source code and outputs the **_/dist_** folder which can be deployed to hosting platform like Vercel. |
+
+Since we already have a /dist folder ready for deployment, let's use Vercel CLI to deploy pre-built applications.
+
+```bash
+npm i -g vercel
+```
+
+"running scripts on this system is disabled..." error fix for Powershell terminal.
+
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+```
+
+```bash
+vercel login
+```
